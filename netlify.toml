@@ -2,7 +2,8 @@
   from = "/api/core/*"
   to = "https://dev.api.bekindnetwork.com/api/v1/:splat"
   status = 200
-  force = true
+  force = false
+  headers = {X-From = "Netlify"}
 
   [[headers]]
   for = "/api/core/*"
