@@ -31,6 +31,27 @@
 
 🔗 **[Ver aplicación desplegada](https://techitianreact.netlify.app)**
 
+**Limitación conocida:** Las peticiones POST fallan con error 403 en producción debido a:
+
+- Configuraciones de CORS entre Netlify y la API externa
+- Los redirects de Netlify requieren configuración adicional en el backend
+- Esto es un problema común en despliegues con APIs de terceros
+
+**Peticiones GET funcionan correctamente** en producción, demostrando que:
+
+- El redirect básico está configurado
+- La autenticación funciona
+- El problema es específico de preflight requests (OPTIONS)
+
+### Soluciones potenciales:
+
+1. Configurar headers CORS en el backend API
+2. Usar Netlify Functions como proxy
+3. Desplegar el backend y frontend en el mismo dominio
+
+````
+
+
 **Credenciales de prueba:**
 
 - Email: `a.berrio@yopmail.com`
@@ -119,7 +140,7 @@ Antes de comenzar, asegúrate de tener instalado:
 ```bash
 git clone https://github.com/bnescor/prueba-tecnica-react.git
 cd prueba-tecnica-react
-```
+````
 
 ### 2️⃣ Instalar dependencias
 
