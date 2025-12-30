@@ -22,4 +22,6 @@ export const useCategory = (page: number) =>
   useQuery<CategoryParams>({
     queryKey: ["category", page],
     queryFn: () => getActions(page),
+    retry: 1,
+    retryDelay: 500,
   });

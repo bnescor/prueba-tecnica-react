@@ -145,7 +145,6 @@ Edita el archivo `.env` con las URLs de las APIs:
 
 ```env
 VITE_API_AUTH_URL=https://dev.apinetbo.bekindnetwork.com
-VITE_API_CORE_URL=https://dev.api.bekindnetwork.com
 ```
 
 > **Nota**: Las variables en Vite deben tener el prefijo `VITE_` para ser accesibles desde el cliente.

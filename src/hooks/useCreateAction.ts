@@ -19,8 +19,8 @@ export const useCreateAction = () => {
       formData.append("name", payload.name);
       formData.append("description", payload.description);
       formData.append("color", payload.color);
-      formData.append("status", String(payload.active)); // Siempre string
-      const res = await apiCore.post("/api/v1/actions/admin-add", formData);
+      formData.append("status", String(payload.active));
+      const res = await apiCore.post("/actions/admin-add", formData);
       return res.data;
     },
 

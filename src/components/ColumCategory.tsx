@@ -2,8 +2,6 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { Ellipsis, Edit, Trash } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { format } from "date-fns";
-import { es } from "date-fns/locale";
 import {
   Popover,
   PopoverContent,
@@ -35,7 +33,7 @@ function ActionsCell() {
   );
 }
 
-export function Status({ status }: { status: number }) {
+function Status({ status }: { status: number }) {
   return (
     <Badge
       className={`flex items-center gap-1.5 px-2.5 py-1 max-w-fit
@@ -51,13 +49,36 @@ export function Status({ status }: { status: number }) {
   );
 }
 
+function formatDate(dateString: Date) {
+  const date = new Date(dateString);
+
+  return new Intl.DateTimeFormat("es-ES", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  }).format(date);
+}
+
 export const columCategory: ColumnDef<categoryData>[] = [
   {
     accessorKey: "name",
     header: "Nombre",
     enableSorting: true,
     cell: ({ row }) => {
-      return <p className="first-letter:capitalize">{row.original.name}</p>;
+      return (
+        <div className="flex items-center gap-2 max-w-57.5">
+          <Badge
+            className="h-5 min-w-5 rounded-full px-1"
+            style={{ backgroundColor: row.original.color }}
+          />
+          <p className="wrap-break-word whitespace-normal leading-snug">
+            {row.original.name}
+          </p>
+        </div>
+      );
     },
   },
   {
@@ -104,8 +125,7 @@ export const columCategory: ColumnDef<categoryData>[] = [
     header: "Fecha de creación",
     enableSorting: true,
     cell: ({ row }) => {
-      const fecha = row.original.createdAt;
-      return fecha && format(fecha, "dd/MM/yyyy", { locale: es });
+      return <p>{formatDate(row.original.createdAt)}</p>;
     },
   },
   {

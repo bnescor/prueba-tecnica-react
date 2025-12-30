@@ -32,8 +32,7 @@ const categorySchema = z.object({
   name: z.string().min(1, "Debe ingresar un nombre"),
   description: z.string().min(1, "Debe ingresar una descripción"),
   logo: z
-    .instanceof(File)
-    .nullable() // permite null
+    .instanceof(File, { message: "Debe subir una imagen" })
     .refine((f) => !f || f.size <= 10 * 1024 * 1024, "Máximo 10MB")
     .refine(
       (f) => !f || ["image/jpeg", "image/png", "image/webp"].includes(f.type),
@@ -41,11 +40,9 @@ const categorySchema = z.object({
     ),
   color: z
     .string()
-    .min(1, "Debe ingresar un color")
-    .regex(
-      /^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/,
-      "Debe ser un color hexadecimal válido"
-    ),
+    .refine((val) => !val || /^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/.test(val), {
+      message: "Debe ser un color hexadecimal válido",
+    }),
   active: z.boolean(),
 });
 type CategoryForm = z.infer<typeof categorySchema>;
@@ -56,13 +53,6 @@ export default function Modalcategory({ open, onClose }: ModalProps) {
   const create = useCreateAction();
   const form = useForm<CategoryForm>({
     resolver: zodResolver(categorySchema),
-    defaultValues: {
-      active: false,
-      color: "",
-      description: "",
-      logo: null,
-      name: "",
-    },
   });
   useEffect(() => {
     if (open) {
@@ -70,7 +60,7 @@ export default function Modalcategory({ open, onClose }: ModalProps) {
         active: false,
         color: "",
         description: "",
-        logo: null,
+        logo: undefined as unknown as File,
         name: "",
       });
       setPreview(null);
@@ -82,7 +72,7 @@ export default function Modalcategory({ open, onClose }: ModalProps) {
       name: values.name.toLocaleLowerCase().trim(),
       description: values.description.toLocaleLowerCase().trim(),
       icon: values.logo!,
-      color: values.color.toLocaleLowerCase().trim(),
+      color: values.color?.toLocaleLowerCase().trim() ?? "",
       active: values.active ? 1 : 0,
     };
     create.mutate(data, {
@@ -107,7 +97,9 @@ export default function Modalcategory({ open, onClose }: ModalProps) {
 
   const removeFile = () => {
     if (preview) URL.revokeObjectURL(preview);
-    form.setValue("logo", null, { shouldValidate: true });
+    form.setValue("logo", undefined as unknown as File, {
+      shouldValidate: true,
+    });
     setPreview(null);
   };
 
