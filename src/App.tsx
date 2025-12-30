@@ -2,7 +2,7 @@ import Login from "./pages/Login";
 import { Navigate, Route, Routes } from "react-router-dom";
 import PrivateRoute from "./routes/PrivateRoute";
 import Dashboard from "./pages/Dashboard";
-import { dataSlider } from "./lib/Navbar.data";
+import { dataSlider } from "./lib/navbarData";
 import { ComingSoon } from "./pages/ComingSoon";
 import { PrivateLayout } from "./routes/PrivateLayout";
 import Category from "./pages/Category";

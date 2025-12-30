@@ -2,7 +2,7 @@
 import { Loader2, LogOut } from "lucide-react";
 import { Spin as Hamburger } from "hamburger-react";
 import { useState } from "react";
-import { dataSlider } from "@/lib/Navbar.data";
+import { dataSlider } from "@/lib/navbarData";
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "react-router-dom";
 import vectorLogo from "/public/logowhite.png";

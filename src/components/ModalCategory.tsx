@@ -156,6 +156,7 @@ export default function Modalcategory({ open, onClose }: ModalProps) {
                 name="logo"
                 render={() => (
                   <FormItem className="flex flex-col gap-2">
+                    <FormLabel>Logo</FormLabel>
                     {preview ? (
                       <div className="relative w-full h-36 rounded-lg overflow-hidden border-2 p-2">
                         <img
