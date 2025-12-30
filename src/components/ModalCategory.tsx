@@ -40,9 +40,11 @@ const categorySchema = z.object({
     ),
   color: z
     .string()
-    .refine((val) => !val || /^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/.test(val), {
-      message: "Debe ser un color hexadecimal válido",
-    }),
+    .min(1, "Debe ingresar un color")
+    .regex(
+      /^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/,
+      "Debe ser un color hexadecimal válido"
+    ),
   active: z.boolean(),
 });
 type CategoryForm = z.infer<typeof categorySchema>;
