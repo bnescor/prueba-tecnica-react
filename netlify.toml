@@ -3,6 +3,13 @@
   to = "https://dev.api.bekindnetwork.com/api/v1/:splat"
   status = 200
   force = true
+
+  [[headers]]
+  for = "/api/core/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"
   
 [[redirects]]
   from = "/*"
