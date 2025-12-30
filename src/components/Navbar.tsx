@@ -5,7 +5,6 @@ import { useState } from "react";
 import { dataSlider } from "@/lib/navbarData";
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "react-router-dom";
-import vectorLogo from "/public/logowhite.png";
 import { Button } from "./ui/button";
 import { useAuthStore } from "@/store/auth.store";
 export function Navbar() {
@@ -35,7 +34,7 @@ export function Navbar() {
           ${isOpen ? "clip-open" : "clip-close"} z-30 fixed top-0`}
       >
         <div className="flex items-center justify-between h-20 p-4 bg-blue-950">
-          <img src={vectorLogo} alt="Logo de la empresa" />
+          <img src="/logoWhite.png" alt="Logo de la empresa" />
           <Link
             className="flex items-center gap-3"
             to={"/"}
@@ -78,7 +77,7 @@ export function Navbar() {
               );
             })}
           </ul>
-          <Button variant={"ghost"} onClick={logout} disabled={isLoggingOut}>
+          <Button variant={"outline"} onClick={logout} disabled={isLoggingOut}>
             {isLoggingOut ? "Cerrando sesión..." : "Cerrar sesión"}
             {isLoggingOut ? (
               <Loader2 className="animate-spin mr-2" />

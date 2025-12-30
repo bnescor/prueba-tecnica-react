@@ -13,7 +13,6 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { EyeIcon, EyeOff, Loader2, LockKeyhole, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "/public/logo.png";
 import { useLogin } from "@/hooks/useLogin";
 
 export const loginSchema = z.object({
@@ -48,7 +47,7 @@ export default function FormLogin() {
 
   return (
     <div className="max-w-107.5 w-full flex flex-col justify-center items-center shadow-lg rounded-lg py-5 px-8 gap-6 bg-background">
-      <img src={logo} alt="Logo de la empresa" />
+      <img src="/Logo.png" alt="Logo de la empresa" />
       <h2 className="text-xl font-bold text-center">
         ¡Empieza a conectar tu comunidad ante buenas acciones!
       </h2>

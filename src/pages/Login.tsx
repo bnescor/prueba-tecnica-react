@@ -1,5 +1,4 @@
 import FormLogin from "@/components/FormLogin";
-import backgound from "/public/background.png";
 import { useAuthStore } from "@/store/auth.store";
 import { Navigate } from "react-router-dom";
 
@@ -11,7 +10,7 @@ const Login = () => {
   return (
     <div className="relative h-screen w-full overflow-hidden">
       <img
-        src={backgound}
+        src="/Background.png"
         alt="Fondo de la page"
         className="object-fill absolute top-0 left-0 -z-30"
       />

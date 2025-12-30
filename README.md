@@ -46,8 +46,7 @@
 
 - 🔐 **Sistema de Autenticación** - Login seguro con JWT y protección de rutas
 - 📊 **Listado Paginado** - Tabla interactiva con datos del servidor
-- ➕ **Gestión CRUD Completa** - Crear, leer, actualizar y eliminar acciones
-- 🔍 **Búsqueda y Filtros** - Filtrado en tiempo real de registros
+- ➕ **Creacion de acciones** - Crear categoria
 - 📱 **Diseño Responsive** - Optimizado para móviles, tablets y desktop
 - ⚡ **Optimización de Rendimiento** - Caching inteligente con React Query
 
@@ -58,7 +57,7 @@
 - 🔄 Manejo de estados asíncronos (loading, error, success)
 - 🛡️ Interceptores HTTP para autenticación automática
 - 💾 Persistencia de sesión en localStorage
-- 🎯 TypeScript-ready (preparado para migración)
+- 🎯 TypeScript
 
 ---
 
@@ -118,8 +117,8 @@ Antes de comenzar, asegúrate de tener instalado:
 ### 1️⃣ Clonar el repositorio
 
 ```bash
-git clone https://github.com/BrianEscorcia/prueba-tecnica-react-junior.git
-cd prueba-tecnica-react-junior
+git clone https://github.com/bnescor/prueba-tecnica-react.git
+cd prueba-tecnica-react
 ```
 
 ### 2️⃣ Instalar dependencias
@@ -139,7 +138,7 @@ yarn install
 Crea un archivo `.env` en la raíz del proyecto:
 
 ```bash
-cp .env.example .env
+New-Item -Path . -Name ".env" -ItemType "File"
 ```
 
 Edita el archivo `.env` con las URLs de las APIs:
@@ -163,7 +162,7 @@ VITE_API_CORE_URL=https://dev.api.bekindnetwork.com
 npm run dev
 ```
 
-## La aplicación estará disponible en **http://localhost:5173** (Vite)
+## La aplicación estará disponible en **localhost** (Vite)
 
 ## 💡 Decisiones Técnicas
 
@@ -375,7 +374,7 @@ Este proyecto incluye un checklist completo de pruebas funcionales documentado e
 - ✅ Validación de formularios
 - ✅ Listado y visualización de datos
 - ✅ Paginación (navegación y límites)
-- ✅ CRUD completo (crear, editar, eliminar)
+- ✅ Creacion de acciones
 - ✅ Persistencia de sesión
 - ✅ Manejo de errores
 
@@ -392,6 +391,11 @@ Este proyecto incluye un checklist completo de pruebas funcionales documentado e
 ## 👤 Autor
 
 ## **Brian Escorcia** - Frontend Developer
+
+Brian Escorcia - Frontend Developer
+
+- 💼 LinkedIn: [Brian Escorcia](https://www.linkedin.com/in/brian-escorcia-gonzalez)
+- 📧 Email: Naziegonzalez@gmail.com
 
 ## 📄 Licencia
 
