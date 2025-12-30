@@ -7,7 +7,7 @@
 [![TailwindCSS](https://img.shields.io/badge/Tailwind-3.x-38B2AC.svg)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-![Demo Screenshot](./docs/screenshot.png) <!-- Opcional: agrega una captura -->
+<img src="/public/Demo.png" alt="Demo Screenshot" width="700" />
 
 ---
 
@@ -29,7 +29,7 @@
 
 ## 🌐 Demo en Vivo
 
-🔗 **[Ver aplicación desplegada](https://tu-deploy.vercel.app)** _(Si la desplegaste)_
+🔗 **[Ver aplicación desplegada](https://techitianreact.netlify.app)**
 
 **Credenciales de prueba:**
 
