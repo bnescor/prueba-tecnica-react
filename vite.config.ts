@@ -15,7 +15,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api/core": {
-        target: "https://dev.api.bekindnetwork.com",
+        target: "https://dev.api.bekindnetwork.com/api/v1",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api\/core/, ""),
