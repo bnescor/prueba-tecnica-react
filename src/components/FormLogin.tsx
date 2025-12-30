@@ -38,7 +38,6 @@ export default function FormLogin() {
   });
 
   async function onSubmit(values: z.infer<typeof loginSchema>) {
-    console.log(values);
     login.mutate({
       username: values.email,
       password: values.password,

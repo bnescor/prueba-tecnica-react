@@ -16,7 +16,6 @@ export default function Category() {
   if (category && category.totalPages < currentPage) {
     return <Navigate to="/champions/1" replace />;
   }
-  console.log(category);
   return (
     <div className="flex flex-col gap-4">
       <h3 className="text-3xl font-bold">Categorias</h3>
