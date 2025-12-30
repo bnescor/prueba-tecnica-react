@@ -12,7 +12,7 @@ const Login = () => {
       <img
         src="/Background.png"
         alt="Fondo de la page"
-        className="object-fill absolute top-0 left-0 -z-30"
+        className="object-fill absolute top-0 left-0 -z-30 h-screen w-full"
       />
       <div className="h-screen w-full flex flex-col p-5 gap-6 justify-center items-center z-30">
         <FormLogin />
