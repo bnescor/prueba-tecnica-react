@@ -34,7 +34,7 @@ export function Navbar() {
           ${isOpen ? "clip-open" : "clip-close"} z-30 fixed top-0`}
       >
         <div className="flex items-center justify-between h-20 p-4 bg-blue-950">
-          <img src="/logoWhite.png" alt="Logo de la empresa" />
+          <img src="/LogoWhite.png" alt="Logo de la empresa" />
           <Link
             className="flex items-center gap-3"
             to={"/"}

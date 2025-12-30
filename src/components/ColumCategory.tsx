@@ -71,6 +71,8 @@ export const columCategory: ColumnDef<categoryData>[] = [
           src={icon}
           alt="icon"
           className="h-12 w-12 object-contain rounded-lg aspect-4/3"
+          loading="lazy"
+          onError={(e) => (e.currentTarget.src = "/Fallback.png")}
         />
       );
     },
