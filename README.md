@@ -45,17 +45,25 @@
 
 ### Soluciones potenciales:
 
-1. Configurar headers CORS en el backend API
-2. Usar Netlify Functions como proxy
-3. Desplegar el backend y frontend en el mismo dominio
+- Configurar headers CORS en el backend API
+- Usar Netlify Functions como proxy
+- Desplegar el backend y frontend en el mismo dominio
 
-````
-
+---
 
 **Credenciales de prueba:**
 
-- Email: `a.berrio@yopmail.com`
-- Password: `AmuFK8G4Bh64Q1uX+IxQhw==`
+-Email:
+
+```bash
+a.berrio@yopmail.com
+```
+
+-Password
+
+```bash
+AmuFK8G4Bh64Q1uX+IxQhw==
+```
 
 > **Nota**: La API puede tardar ~30 segundos en activarse en la primera petición (cold start).
 
@@ -140,7 +148,7 @@ Antes de comenzar, asegúrate de tener instalado:
 ```bash
 git clone https://github.com/bnescor/prueba-tecnica-react.git
 cd prueba-tecnica-react
-````
+```
 
 ### 2️⃣ Instalar dependencias
 
