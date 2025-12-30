@@ -12,6 +12,16 @@ export default defineConfig({
       },
     }),
   ],
+  server: {
+    proxy: {
+      "/api/core": {
+        target: "https://dev.api.bekindnetwork.com",
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api\/core/, ""),
+      },
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

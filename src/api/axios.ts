@@ -6,7 +6,7 @@ export const apiAuth = axios.create({
 });
 
 export const apiCore = axios.create({
-  baseURL: import.meta.env.VITE_API_CORE_URL,
+  baseURL: "/api/core/api/v1",
 });
 
 // Interceptor para token

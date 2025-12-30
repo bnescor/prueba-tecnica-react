@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/api/core/*"
+  to = "https://dev.api.bekindnetwork.com/:splat"
+  status = 200
+  force = true
